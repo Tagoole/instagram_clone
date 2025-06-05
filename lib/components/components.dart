@@ -66,10 +66,7 @@ class PostBody extends StatelessWidget {
               Icon(Icons.bookmark),
             ],
           ),
-          Text(
-            '${likes}',
-            textAlign: TextAlign.left,
-            ),
+          Text('${likes}', textAlign: TextAlign.left),
         ],
       ),
     );
@@ -131,5 +128,18 @@ class OtherStories extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [profilePicture, SizedBox(height: 4), textArea],
     );
+  }
+}
+
+class CustomBottomNavigationBar extends StatelessWidget {
+  final int currentIndex;
+  const CustomBottomNavigationBar({
+    super.key,
+    required this.currentIndex
+    });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
