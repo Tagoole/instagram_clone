@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/components/components.dart';
 
 class ReelsPage extends StatefulWidget {
   const ReelsPage({super.key});
@@ -10,6 +11,9 @@ class ReelsPage extends StatefulWidget {
 class _ReelsPageState extends State<ReelsPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(child: Text('Reels Page')),
+      bottomNavigationBar: CustomBottomNavigationBar(currentIndex: 3),
+      );
   }
 }

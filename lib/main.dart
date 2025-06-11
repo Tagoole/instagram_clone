@@ -5,6 +5,7 @@ import 'package:instagram_clone/pages/post_page.dart';
 import 'package:instagram_clone/pages/profile_page.dart';
 import 'package:instagram_clone/pages/reels_page.dart';
 import 'package:instagram_clone/pages/search_page.dart';
+import 'package:instagram_clone/pages/search_results.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         '/search':(context) => SearchPage(),
         '/post': (context) => PostPage(),
         '/reels': (context) => ReelsPage(),
-        '/profile': (context) => ProfilePage()
+        '/profile': (context) => ProfilePage(),
+        '/search_results':(context) => SearchResults(),
       },
       );
   }

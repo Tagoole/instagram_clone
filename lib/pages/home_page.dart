@@ -17,6 +17,27 @@ class HomePage extends StatelessWidget {
       {'path': 'images/six.jpg', 'name': 'Charles'},
       {'path': 'images/seven.jpg', 'name': 'George'},
       {'path': 'images/eight.jpg', 'name': 'Fred'},
+      {'path': 'images/nine.jpg', 'name': 'Trifler'},
+      {'path': 'images/ten.jpg', 'name': 'Mukisa'},
+      {'path': 'images/eleven.jpg', 'name': 'Ronaldo'},
+      {'path': 'images/twelve.jpg', 'name': 'Messi'},
+      {'path': 'images/thirteen.jpg', 'name': 'Neymar'},
+      {'path': 'images/fourteen.jpg', 'name': 'Junior'},
+      {'path': 'images/fifteen.jpg', 'name': 'Saka'},
+      {'path': 'images/sixteen.jpg', 'name': 'Opito'},
+      {'path': 'images/seventeen.jpg', 'name': 'Obina'},
+      {'path': 'images/eighteen.jpg', 'name': 'Magaret'},
+      {'path': 'images/nineteen.jpg', 'name': 'Zziwa'},
+      {'path': 'images/twenty.jpg', 'name': 'Okello'},
+      {'path': 'images/a.jpg', 'name': 'Larry'},
+      {'path': 'images/b.jpg', 'name': 'Denis'},
+      {'path': 'images/c.jpg', 'name': 'Fidel'},
+      {'path': 'images/d.jpg', 'name': 'OthyScot'},
+      {'path': 'images/e.jpg', 'name': 'Pogo'},
+      {'path': 'images/f.jpg', 'name': 'Patrick'},
+      {'path': 'images/g.jpg', 'name': 'Kevin'},
+      {'path': 'images/h.jpg', 'name': 'Marvin'},
+      {'path': 'images/i.jpg', 'name': 'Wanga'},
     ];
 
     return Scaffold(
@@ -69,6 +90,11 @@ class HomePage extends StatelessWidget {
                           child: OtherStories(
                             name: data['name']!,
                             path: data['path']!,
+                            width1: 50,
+                            height1: 50,
+                            width2: 47,
+                            height2: 47,
+                            radius: 22,
                           ),
                         );
                       }
@@ -88,7 +114,12 @@ class HomePage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return PostBody(
                     name: profileData[index]['name']!, 
-                    path: profileData[index]['path']!
+                    path: profileData[index]['path']!,
+                    width1: 40,
+                    height1: 40,
+                    width2: 37,
+                    height2: 37,
+                    radius: 16,
                     );
                 },
               ),
@@ -96,37 +127,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        onTap: (index) {
-          // You can leave this empty for now if you don't need tab switching
-        },
-        type: BottomNavigationBarType.fixed,
-
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_max_rounded),
-            label: 'Home',
-          ),
-
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle_outline_rounded),
-            label: 'Add',
-          ),
-
-          BottomNavigationBarItem(
-            icon: Icon(Icons.video_call_rounded),
-            label: 'Reels',
-          ),
-
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_3_rounded),
-            label: 'Profile',
-          ),
-        ],
-      ),
+      bottomNavigationBar: CustomBottomNavigationBar(currentIndex: 0)
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_clone/components/components.dart';
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
@@ -10,6 +11,9 @@ class PostPage extends StatefulWidget {
 class _PostPageState extends State<PostPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Center(child: Text('Post Page')),
+      bottomNavigationBar: CustomBottomNavigationBar(currentIndex: 2),
+      );
   }
 }
