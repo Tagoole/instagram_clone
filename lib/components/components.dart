@@ -50,10 +50,17 @@ class PostBody extends StatefulWidget {
 }
 
 class _PostBodyState extends State<PostBody> {
+  late final int likes; // Make it final and initialize once
+  
+  @override
+  void initState() {
+    super.initState();
+    likes = Random().nextInt(1234455); // Generate once during initialization
+  }
+  
+
   @override
   Widget build(BuildContext context) {
-    final random = Random();
-    int likes = random.nextInt(1234455);
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -79,7 +86,14 @@ class _PostBodyState extends State<PostBody> {
               Icon(Icons.more_vert),
             ],
           ),
-          Image.asset(widget.path),
+          Image.asset(
+            widget.path,
+            width: 300,
+            height: 300,
+            fit: BoxFit.cover,
+            cacheHeight: 300,
+            cacheWidth: 300,
+            ),
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

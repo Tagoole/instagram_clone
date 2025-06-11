@@ -19,25 +19,6 @@ class HomePage extends StatelessWidget {
       {'path': 'images/eight.jpg', 'name': 'Fred'},
       {'path': 'images/nine.jpg', 'name': 'Trifler'},
       {'path': 'images/ten.jpg', 'name': 'Mukisa'},
-      {'path': 'images/eleven.jpg', 'name': 'Ronaldo'},
-      {'path': 'images/twelve.jpg', 'name': 'Messi'},
-      {'path': 'images/thirteen.jpg', 'name': 'Neymar'},
-      {'path': 'images/fourteen.jpg', 'name': 'Junior'},
-      {'path': 'images/fifteen.jpg', 'name': 'Saka'},
-      {'path': 'images/sixteen.jpg', 'name': 'Opito'},
-      {'path': 'images/seventeen.jpg', 'name': 'Obina'},
-      {'path': 'images/eighteen.jpg', 'name': 'Magaret'},
-      {'path': 'images/nineteen.jpg', 'name': 'Zziwa'},
-      {'path': 'images/twenty.jpg', 'name': 'Okello'},
-      {'path': 'images/a.jpg', 'name': 'Larry'},
-      {'path': 'images/b.jpg', 'name': 'Denis'},
-      {'path': 'images/c.jpg', 'name': 'Fidel'},
-      {'path': 'images/d.jpg', 'name': 'OthyScot'},
-      {'path': 'images/e.jpg', 'name': 'Pogo'},
-      {'path': 'images/f.jpg', 'name': 'Patrick'},
-      {'path': 'images/g.jpg', 'name': 'Kevin'},
-      {'path': 'images/h.jpg', 'name': 'Marvin'},
-      {'path': 'images/i.jpg', 'name': 'Wanga'},
     ];
 
     return Scaffold(
@@ -77,6 +58,9 @@ class HomePage extends StatelessWidget {
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: profileData.length + 1,
+                    cacheExtent: 500, // 
+                    addAutomaticKeepAlives: false, // 
+                    addRepaintBoundaries: false, //
                     itemBuilder: (context, index) {
                       if (index == 0) {
                         return Padding(

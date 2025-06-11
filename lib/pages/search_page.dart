@@ -20,19 +20,6 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     final List<String> imageData = [
-      'images/a.jpg',
-      'images/b.jpg',
-      'images/c.jpg',
-      'images/d.jpg',
-      'images/e.jpg',
-      'images/f.jpg',
-      'images/g.jpg',
-      'images/h.jpg',
-      'images/i.jpg',
-      'images/tagoole.jpg',
-      'images/one.jpg',
-      'images/two.jpg',
-      'images/three.jpg',
       'images/four.jpg',
       'images/five.jpg',
       'images/six.jpg',
