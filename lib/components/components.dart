@@ -51,13 +51,19 @@ class PostBody extends StatefulWidget {
 
 class _PostBodyState extends State<PostBody> {
   late final int likes; // Make it final and initialize once
-  
+  Color _likeIconColor = Colors.black;
+
   @override
   void initState() {
     super.initState();
     likes = Random().nextInt(1234455); // Generate once during initialization
   }
-  
+
+  void _changeIconColour() {
+    _likeIconColor = (_likeIconColor == Colors.black)
+        ? Colors.red
+        : Colors.black;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,19 +94,24 @@ class _PostBodyState extends State<PostBody> {
           ),
           Image.asset(
             widget.path,
-            width: 300,
-            height: 300,
+            width: 350,
+            height: 350,
             fit: BoxFit.cover,
-            cacheHeight: 300,
-            cacheWidth: 300,
-            ),
+            cacheHeight: 350,
+            cacheWidth: 350,
+          ),
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(width: 15),
-              Icon(Icons.favorite_rounded),
-              SizedBox(width: 10),
+              IconButton(
+                onPressed: _changeIconColour,
+                icon: Icon(
+                  Icons.favorite,
+                  color: _likeIconColor,
+                ),
+              ),
               Icon(Icons.add_comment_outlined),
               SizedBox(width: 10),
               Transform.rotate(angle: -0.5, child: Icon(Icons.send)),
@@ -194,14 +205,11 @@ class OtherStories extends StatelessWidget {
   }
 }
 
-
-
-
 class CustomBottomNavigationBar extends StatefulWidget {
   final int currentIndex;
-  
+
   const CustomBottomNavigationBar({super.key, required this.currentIndex});
-  
+
   @override
   State<CustomBottomNavigationBar> createState() =>
       _CustomBottomNavigationBarState();
@@ -238,10 +246,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           icon: Icon(Icons.home_max_rounded),
           label: 'Home',
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.search), 
-          label: 'Search'
-        ),
+        BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
         BottomNavigationBarItem(
           icon: Icon(Icons.add_circle_outline_rounded),
           label: 'Add',
@@ -256,5 +261,19 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         ),
       ],
     );
+  }
+}
+
+class CustomVideoPlayer extends StatefulWidget {
+  const CustomVideoPlayer({super.key});
+
+  @override
+  State<CustomVideoPlayer> createState() => _CustomVideoPlayerState();
+}
+
+class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }

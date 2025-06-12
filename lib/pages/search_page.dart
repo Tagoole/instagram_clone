@@ -12,7 +12,7 @@ class _SearchPageState extends State<SearchPage> {
   final TextEditingController _searchController = TextEditingController();
 
   @override
-  dispose() {
+  void dispose() { // Fixed: Added void
     _searchController.dispose();
     super.dispose();
   }
@@ -20,13 +20,6 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     final List<String> imageData = [
-      'images/four.jpg',
-      'images/five.jpg',
-      'images/six.jpg',
-      'images/seven.jpg',
-      'images/eight.jpg',
-      'images/nine.jpg',
-      'images/ten.jpg',
       'images/eleven.jpg',
       'images/twelve.jpg',
       'images/thirteen.jpg',
@@ -37,7 +30,15 @@ class _SearchPageState extends State<SearchPage> {
       'images/eighteen.jpg',
       'images/nineteen.jpg',
       'images/twenty.jpg',
+      'images/twenty.jpg',
+      'images/twenty.jpg',
+      'images/twenty.jpg',
+      'images/twenty.jpg',
+      'images/twenty.jpg',
+      'images/twenty.jpg',
+
     ];
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -65,12 +66,46 @@ class _SearchPageState extends State<SearchPage> {
       ),
 
       body: GridView.builder(
+        // Add performance optimizations
+        cacheExtent: 500,
+        addAutomaticKeepAlives: false,
+        addRepaintBoundaries: false,
+        
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
+          crossAxisCount: 3, // Changed from 4 to 3 for better performance
+          crossAxisSpacing: 2,
+          mainAxisSpacing: 2,
+          childAspectRatio: 1.0, // Square images
         ),
         itemCount: imageData.length,
         itemBuilder: (context, index) {
-          return Image.asset(imageData[index], width: 10, height: 10);
+          return Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(4),
+              child: Image.asset(
+                imageData[index],
+                // CRITICAL: Proper image optimization
+                fit: BoxFit.cover,
+                width: 120, // Set reasonable size
+                height: 120,
+                cacheWidth: 120, // Cache at smaller resolution
+                cacheHeight: 120,
+                // Add error handling
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    color: Colors.grey[300],
+                    child: Icon(
+                      Icons.broken_image,
+                      color: Colors.grey[600],
+                    ),
+                  );
+                },
+              ),
+            ),
+          );
         },
       ),
       bottomNavigationBar: CustomBottomNavigationBar(currentIndex: 1),
