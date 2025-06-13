@@ -15,12 +15,11 @@ import 'package:instagram_clone/pages/search_page.dart';
 import 'package:instagram_clone/pages/search_results.dart';
 
 void main() {
-  runApp(const InstagramCloneApp());
+  runApp(const MyApp());
 }
 
-class InstagramCloneApp extends StatelessWidget {
-  const InstagramCloneApp({Key? key}) : super (key: key);
-  // const MyApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +60,6 @@ class _MatrialScreenState extends State<MatrialScreen> {
     // Uncomment the next line if SearchScreen is implemented
     // const SearchScreen(),
     const CameraScreen(),
-    const ActivityScreen(),
     const ActivityScreen(),
     const ProfileScreen(),
     // const ReelsScreen(),
