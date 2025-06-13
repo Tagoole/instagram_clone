@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:instagram_clone/pages/home_page.dart';
+import 'package:instagram_clone/pages/login_page.dart';
 import 'package:instagram_clone/pages/post_page.dart';
 import 'package:instagram_clone/pages/profile_page.dart';
 import 'package:instagram_clone/pages/reels_page.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: HomePage(),
       routes: {
+        '/login':(context) => LoginPage(),
         '/home':(context) => HomePage(),
         '/search':(context) => SearchPage(),
         '/post': (context) => PostPage(),

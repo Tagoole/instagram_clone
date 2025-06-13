@@ -34,6 +34,13 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
+              Navigator.pushNamed(context, '/login');
+              print('heading to login page');
+            },
+            icon: Icon(Icons.logout_rounded),
+          ),
+          IconButton(
+            onPressed: () {
               print('Pressed the favourite button');
             },
             icon: Icon(Icons.favorite),
@@ -58,8 +65,8 @@ class HomePage extends StatelessWidget {
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: profileData.length + 1,
-                    cacheExtent: 500, // 
-                    addAutomaticKeepAlives: false, // 
+                    cacheExtent: 500, //
+                    addAutomaticKeepAlives: false, //
                     addRepaintBoundaries: false, //
                     itemBuilder: (context, index) {
                       if (index == 0) {
@@ -97,21 +104,21 @@ class HomePage extends StatelessWidget {
                 itemCount: profileData.length,
                 itemBuilder: (context, index) {
                   return PostBody(
-                    name: profileData[index]['name']!, 
+                    name: profileData[index]['name']!,
                     path: profileData[index]['path']!,
                     width1: 40,
                     height1: 40,
                     width2: 37,
                     height2: 37,
                     radius: 16,
-                    );
+                  );
                 },
               ),
             ),
           ),
         ],
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(currentIndex: 0)
+      bottomNavigationBar: CustomBottomNavigationBar(currentIndex: 0),
     );
   }
 }

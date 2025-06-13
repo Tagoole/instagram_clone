@@ -37,6 +37,7 @@ dependencies:
   flutter_native_splash: 
   google_fonts: 
   video_player: ^2.10.0
+  firebase_core: ^2.24.2
 
 
 dev_dependencies:
