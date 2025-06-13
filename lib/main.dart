@@ -56,14 +56,13 @@ class MatrialScreen extends StatefulWidget {
 class _MatrialScreenState extends State<MatrialScreen> {
   int _selectedIndex = 0;
   final List<Widget> _screens = [
-    const HomeScreen(),
-    // Uncomment the next line if SearchScreen is implemented
-    // const SearchScreen(),
-    const CameraScreen(),
-    // const ReelsScreen(),
-    const ActivityScreen(),
-    const ProfileScreen(),
-  ];
+  const HomeScreen(),       // index 0
+  SearchPage(),             // index 1 
+  const CameraScreen(),     // index 2
+  const ActivityScreen(),   // index 3
+  const ProfileScreen(),    // index 4
+];
+
 
   @override
   Widget build(BuildContext context) {
