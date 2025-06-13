@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 // import 'screens/search_screen.dart';
-import 'screens/profile_screen.dart';
 import 'screens/camera_screen.dart';
-// import 'screens/reels_screen.dart';
 import 'screens/activity_screen.dart';
+// import 'screens/reels_screen.dart';
+import 'screens/profile_screen.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:instagram_clone/pages/home_page.dart';
 import 'package:instagram_clone/pages/login_page.dart';
@@ -60,9 +60,9 @@ class _MatrialScreenState extends State<MatrialScreen> {
     // Uncomment the next line if SearchScreen is implemented
     // const SearchScreen(),
     const CameraScreen(),
+    // const ReelsScreen(),
     const ActivityScreen(),
     const ProfileScreen(),
-    // const ReelsScreen(),
   ];
 
   @override

@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: const Center(
-        child: Text('Home Feed - coming soon!'),
+        child: Text('Home page'),
       ),
     );
   }

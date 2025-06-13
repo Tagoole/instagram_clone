@@ -14,7 +14,7 @@ class _ProfileScreenState extends State<ProfileScreen> with TickerProviderStateM
   // Sample profile data
   final profileData = {
     'username': 'AP_Tagoole',
-    'displayName': 'AP Tagoole',
+    'displayName': 'AP_&_Tagoole',
     'bio': 'FullStack Developers 👩‍💻 💻\n🚀⚙️ Backend Dev\n📧 ap.tagoole@gmail.com',
     'website': 'www.full-stack-dev.com',
     'isVerified': true,
@@ -141,8 +141,8 @@ class _ProfileScreenState extends State<ProfileScreen> with TickerProviderStateM
                   border: Border.all(color: Colors.grey.shade300, width: 2),
                 ),
                 child: ClipOval(
-                  child: Image.network(
-                    'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face',
+                  child: Image.asset(
+                    'assets/images/pearl_of_africa.png', // Replace with your avatar image
                     fit: BoxFit.cover,
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
@@ -303,7 +303,7 @@ class _ProfileScreenState extends State<ProfileScreen> with TickerProviderStateM
           
           // Sample Highlights
           ...List.generate(4, (index) {
-            final highlights = ['Travel', 'Food', 'Work', 'Friends'];
+            final highlights = ['JAVA☕', 'C++', 'Python-Django', 'Firebase🔥'];
             return Padding(
               padding: const EdgeInsets.only(right: 16),
               child: Column(
